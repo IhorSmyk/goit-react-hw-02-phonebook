@@ -1,4 +1,6 @@
 import { Component } from 'react';
+import Section from './Section/Section';
+import InputForm from './InfutForm/InputForm';
 
 class App extends Component {
   state = {
@@ -12,9 +14,13 @@ class App extends Component {
     name: '',
     number: '',
   };
-  
+
   render() {
-    return <div>React homework template</div>;
+    return (
+      <Section>
+        <InputForm />
+      </Section>
+    );
   }
 }
 

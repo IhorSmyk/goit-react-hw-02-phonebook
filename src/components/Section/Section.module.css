@@ -1,0 +1,13 @@
+.section {
+  background-color: transparent;
+  color: #010101;
+  width: 400px;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  font-weight: inherit;
+  font-size: inherit;
+}

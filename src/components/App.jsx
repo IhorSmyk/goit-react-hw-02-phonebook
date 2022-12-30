@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Section from './Section/Section';
 import InputForm from './InfutForm/InputForm';
+import ContactList from './ContactList/ContactList';
 
 class App extends Component {
   state = {
@@ -17,9 +18,14 @@ class App extends Component {
 
   render() {
     return (
-      <Section>
-        <InputForm />
-      </Section>
+      <div>
+        <Section>
+          <InputForm />
+        </Section>
+        <Section>
+          <ContactList contacts={this.state.contacts} onDeleteContact={1} />
+        </Section>
+      </div>
     );
   }
 }

@@ -1,7 +1,6 @@
 import { Component } from 'react';
-import Section from './Section/Section';
-import InputForm from './InfutForm/InputForm';
-import ContactList from './ContactList/ContactList';
+// import InputForm from './InfutForm/InputForm';
+import ContactTable from './ContactTable/ContactTable';
 
 class App extends Component {
   state = {
@@ -16,15 +15,19 @@ class App extends Component {
     number: '',
   };
 
+  handleDeleteContact = idToDelete => {
+    this.setState(prev => ({
+      contacts: prev.contacts.filter(contact => contact.id !== idToDelete),
+    }));
+  };
+
   render() {
     return (
       <div>
-        <Section>
-          <InputForm />
-        </Section>
-        <Section>
-          <ContactList contacts={this.state.contacts} onDeleteContact={1} />
-        </Section>
+        <ContactTable
+          contacts={this.state.contacts}
+          onDeleteContact={this.handleDeleteContact}
+        />
       </div>
     );
   }

@@ -2,10 +2,6 @@ import PropTypes from 'prop-types';
 import s from './ContactTable.module.css';
 
 const ContactTable = ({ contacts, onDeleteContact }) => {
-  //   const delContact = (id) => {
-  //     onDeleteContact(id);
-  // }
-
   return (
     <table className={s.contactListTable}>
       <thead className={s.thead}>

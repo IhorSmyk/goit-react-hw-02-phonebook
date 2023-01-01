@@ -1,5 +1,6 @@
 import { Component } from 'react';
-// import InputForm from './InfutForm/InputForm';
+import ContactForm from './ContactForm/ContactForm';
+import Filter from './Filter/Filter';
 import ContactTable from './ContactTable/ContactTable';
 
 class App extends Component {
@@ -11,8 +12,6 @@ class App extends Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    name: '',
-    number: '',
   };
 
   handleDeleteContact = idToDelete => {
@@ -24,6 +23,11 @@ class App extends Component {
   render() {
     return (
       <div>
+        <h1>Phonebook</h1>
+        <ContactForm />
+
+        <h2>Contacts</h2>
+        <Filter handleChangeFilter={null} value={null} />
         <ContactTable
           contacts={this.state.contacts}
           onDeleteContact={this.handleDeleteContact}

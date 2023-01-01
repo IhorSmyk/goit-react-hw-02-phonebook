@@ -45,3 +45,9 @@ body {
   background-size: 100%;
   background-repeat: no-repeat;
 }
+
+button {
+  background: transparent;
+  font-family: 'Times New Roman', Times, serif;
+  cursor: pointer;
+}

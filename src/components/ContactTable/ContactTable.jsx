@@ -18,9 +18,7 @@ const ContactTable = ({ contacts, onDeleteContact }) => {
               <td>{name} </td>
               <td>{number}</td>
               <td>
-                <button className={s.btn} onClick={() => onDeleteContact(id)}>
-                  delete
-                </button>
+                <button onClick={() => onDeleteContact(id)}>delete</button>
               </td>
             </tr>
           );

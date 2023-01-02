@@ -22,7 +22,6 @@ class ContactForm extends Component {
       name: this.state.name,
       number: this.state.number,
     });
-    console.log(this.state.name);
     this.setState({ name: '', number: '' });
   };
 
@@ -49,7 +48,7 @@ class ContactForm extends Component {
             type="text"
             name="number"
             placeholder="Enter a number"
-            // pattern=" ^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
+            pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
             title="This field may contain numbers"
             required
             onChange={this.handleChangeData}

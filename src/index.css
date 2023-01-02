@@ -33,7 +33,6 @@ img {
 body {
   margin: 0;
   font-family: 'Tangerine', cursive;
-
   font-weight: 700;
   font-size: 35px;
   letter-spacing: 0.02em;
@@ -41,21 +40,24 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-image: url('./imgs/phoneBookBackground.jpg'); */
+  background-image: url('./imgs/phoneBookBackground.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
   text-align: center;
-  margin-top: 23%;
+  margin-top: 22%;
 }
 
 button {
   background: transparent;
   font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
   cursor: pointer;
-  height: 25px;
+  height: 33px;
 }
 
 input {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 25px;
   text-align: inherit;
   display: block;
   width: 100%;

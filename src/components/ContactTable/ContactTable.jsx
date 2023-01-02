@@ -1,30 +1,36 @@
 import PropTypes from 'prop-types';
-import s from './ContactTable.module.css'
+import s from './ContactTable.module.css';
 
 const ContactTable = ({ contacts, onDeleteContact }) => {
   return (
-    <table className={s.contactListTable}>
-      <thead className={s.thead}>
-        <tr>
-          <th>Name</th>
-          <th>Number</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody className={s.tbody}>
-        {contacts.map(({ id, name, number }) => {
-          return (
-            <tr key={id}>
-              <td>{name} </td>
-              <td>{number}</td>
-              <td>
-                <button onClick={() => onDeleteContact(id)}>delete</button>
-              </td>
+    <>
+      {contacts.length === 0 ? (
+        <p className={s.message}>There is no contact</p>
+      ) : (
+        <table className={s.contactListTable}>
+          <thead className={s.thead}>
+            <tr>
+              <th>Name</th>
+              <th>Number</th>
+              <th></th>
             </tr>
-          );
-        })}
-      </tbody>
-    </table>
+          </thead>
+          <tbody className={s.tbody}>
+            {contacts.map(({ id, name, number }) => {
+              return (
+                <tr key={id}>
+                  <td>{name} </td>
+                  <td>{number}</td>
+                  <td>
+                    <button onClick={() => onDeleteContact(id)}>delete</button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      )}
+    </>
   );
 };
 

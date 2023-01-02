@@ -20,33 +20,40 @@ class App extends Component {
     }));
   };
 
-  getFilteredContacts = e => {
+  handleChangeFilter = e => {
     this.setState({
-      filter: e.target.value,
+      filter: e.target.value.toLowerCase(),
     });
   };
 
+  getFilteredContacts = () =>
+    this.state.contacts.filter(({ name }) =>
+      name.toLowerCase().includes(this.state.filter)
+    );
+
   handleAddContact = newContact => {
-    console.log(newContact);
     this.state.contacts.some(
       ({ name }) => name.toLowerCase() === newContact.name.toLowerCase()
     )
       ? alert(`a contact with the name ${newContact.name} already exists`)
-      : this.setState(prev => ({contacts: [].concat(newContact, prev.contacts)}))
+      : this.setState(prev => ({
+          contacts: [].concat(newContact, prev.contacts),
+        }));
   };
 
   render() {
+    const contacts = this.getFilteredContacts();
     return (
       <div>
         <h1>Phonebook</h1>
         <ContactForm add={this.handleAddContact} />
         <h2>Contacts</h2>
         <Filter
-          handleChangeFilter={this.getFilteredContacts}
+          handleChangeFilter={this.handleChangeFilter}
           value={this.state.filter}
         />
         <ContactTable
-          contacts={this.state.contacts}
+          contacts={contacts}
           onDeleteContact={this.handleDeleteContact}
         />
       </div>

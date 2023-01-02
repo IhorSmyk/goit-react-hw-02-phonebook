@@ -20,7 +20,9 @@ class InputForm extends Component {
     return (
       <>
         <form className={s.form} action="submit" onSubmit={0}>
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">
+            Name
+          </label>
           <input
             id="name"
             type="text"
@@ -33,7 +35,9 @@ class InputForm extends Component {
             value={this.state.name}
           />
 
-          <label htmlFor="number">Number</label>
+          <label htmlFor="number">
+            Number
+          </label>
           <input
             id="number"
             type="text"

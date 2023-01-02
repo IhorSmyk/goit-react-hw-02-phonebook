@@ -52,6 +52,7 @@ button {
   background: transparent;
   font-family: 'Times New Roman', Times, serif;
   cursor: pointer;
+  height: 25px;
 }
 
 input {
@@ -60,5 +61,11 @@ input {
   width: 100%px;
   height: 30px;
   border: 2px solid black;
-  background: rgba(223, 207, 180, 0.7);
+  background: rgba(223, 207, 180, 0.8);
+}
+
+h1,
+h2 {
+  margin-top: 60px;
+  margin-bottom: 10px;
 }

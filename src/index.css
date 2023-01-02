@@ -44,10 +44,21 @@ body {
   background-image: url('./imgs/phoneBookBackground.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
+  text-align: center;
+  margin-top: 23%;
 }
 
 button {
   background: transparent;
   font-family: 'Times New Roman', Times, serif;
   cursor: pointer;
+}
+
+input {
+  text-align: inherit;
+  display: block;
+  width: 100%px;
+  height: 30px;
+  border: 2px solid black;
+  background: rgba(223, 207, 180, 0.7);
 }

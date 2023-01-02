@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import s from './ContactTable.module.css';
+import s from './ContactTable.module.css'
 
 const ContactTable = ({ contacts, onDeleteContact }) => {
   return (

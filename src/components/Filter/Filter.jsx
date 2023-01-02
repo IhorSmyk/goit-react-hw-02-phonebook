@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import s from './Finder.module.css';
+import s from './Filter.module.css';
 
 const Filter = ({ handleChangeFilter, value }) => {
   return (
@@ -19,3 +19,5 @@ Filter.propTypes = {
   handleChangeFilter: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
 };
+
+export default Filter;

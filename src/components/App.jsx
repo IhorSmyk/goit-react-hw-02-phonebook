@@ -32,11 +32,11 @@ class App extends Component {
       name.toLowerCase().includes(this.state.filter)
     );
 
-  createContact = (newName, newNumber) => {
+  createContact = (name, number) => {
     return {
       id: nanoid(),
-      name: newName,
-      number: newNumber,
+      name,
+      number,
     };
   };
 
@@ -46,7 +46,10 @@ class App extends Component {
     )
       ? alert(`a contact with the name ${newName} already exists`)
       : this.setState(prev => ({
-          contacts: [].concat(this.createContact(newName,newNumber), prev.contacts),
+          contacts: [].concat(
+            this.createContact(newName, newNumber),
+            prev.contacts
+          ),
         }));
   };
 

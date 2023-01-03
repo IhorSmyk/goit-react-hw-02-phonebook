@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 import s from './ContactForm.module.css';
-import { nanoid } from 'nanoid';
 
 class ContactForm extends Component {
   state = {
@@ -14,21 +13,16 @@ class ContactForm extends Component {
     this.setState({ [name]: value });
   };
 
-  createContact = e => {
+  submitData = e => {
     e.preventDefault();
-
-    this.props.add({
-      id: nanoid(),
-      name: this.state.name,
-      number: this.state.number,
-    });
+    this.props.sendData(this.state.name, this.state.number);
     this.setState({ name: '', number: '' });
   };
 
   render() {
     return (
       <>
-        <form className={s.form} action="submit" onSubmit={this.createContact}>
+        <form className={s.form} action="submit" onSubmit={this.submitData}>
           <label htmlFor="name">Name</label>
           <input
             id="name"
@@ -62,7 +56,7 @@ class ContactForm extends Component {
 }
 
 ContactForm.propTypes = {
-  add: PropTypes.func.isRequired,
+  sendData: PropTypes.func.isRequired,
 };
 
 export default ContactForm;

@@ -2,6 +2,7 @@ import { Component } from 'react';
 import ContactForm from './ContactForm/ContactForm';
 import Filter from './Filter/Filter';
 import ContactTable from './ContactTable/ContactTable';
+import { nanoid } from 'nanoid';
 
 class App extends Component {
   state = {
@@ -31,13 +32,21 @@ class App extends Component {
       name.toLowerCase().includes(this.state.filter)
     );
 
-  handleAddContact = newContact => {
+  createContact = (newName, newNumber) => {
+    return {
+      id: nanoid(),
+      name: newName,
+      number: newNumber,
+    };
+  };
+
+  handleAddContact = (newName, newNumber) => {
     this.state.contacts.some(
-      ({ name }) => name.toLowerCase() === newContact.name.toLowerCase()
+      ({ name }) => name.toLowerCase() === newName.toLowerCase()
     )
-      ? alert(`a contact with the name ${newContact.name} already exists`)
+      ? alert(`a contact with the name ${newName} already exists`)
       : this.setState(prev => ({
-          contacts: [].concat(newContact, prev.contacts),
+          contacts: [].concat(this.createContact(newName,newNumber), prev.contacts),
         }));
   };
 
@@ -46,7 +55,7 @@ class App extends Component {
     return (
       <div>
         <h1>Phonebook</h1>
-        <ContactForm add={this.handleAddContact} />
+        <ContactForm sendData={this.handleAddContact} />
         <h2>Contacts</h2>
         <Filter
           handleChangeFilter={this.handleChangeFilter}
